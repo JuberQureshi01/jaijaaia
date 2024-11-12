@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DNA Sequencing</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        .form-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 600px; /* Ensure the container can hold at least 300 characters */
+        }
+
+        h1 {
+            color: #ff0000; /* Title color */
+            margin-bottom: 20px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        select {
+            padding: 8px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+		input[type="text"]::placeholder { 
+			font-style: capital; 
+			color: #aaa;
+		}
+
+        input[type="submit"] {
+            padding: 10px;
+            background-color: #4CAF50; /* Submit button color */
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid" style="width: 400px; overflow-wrap: break-word;">
+
+        <h3> Here is your DNA sequence :</h3>
+        <p style="font-size: 6px;"> {{sequence}} </p> 
+
+        <h6> Here is your pattern</h6>
+        <p> {{pattern}} </p> 
+
+       
+        
+            <h6>DNA Sequencing Result</h6>
+            <p><strong>Sequence:</strong> </p>
+
+            {{ tables|safe }}
+
+
+
+
+
+
+    </div>
+</body>
+</html>
+

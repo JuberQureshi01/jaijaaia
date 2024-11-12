@@ -1,0 +1,94 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DNA Sequencing</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 10pvh;
+            margin: 10;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        .form-container {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 07);
+            text-align: center;
+            width: 600px; /* Ensure the container can hold at least 300 characters */
+        }
+
+        h1 {
+            color: #ff0000; /* Title color */
+            margin-bottom: 20px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        select {
+            padding: 8px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+		input[type="text"]::placeholder { 
+			font-style: capital; 
+			color: #aaa;
+		}
+
+        input[type="submit"] {
+            padding: 10px;
+            background-color: #4CAF50; /* Submit button color */
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h1>DNA Sequencing</h1>
+        <form action="/" method="post" role="sequence" enctype="multipart/form-data">
+
+      
+            <label for="dna">Enter DNA sequence (ACGT only):</label>
+            <input type="text" id="dna" name="dna" pattern="[ACGT]*" maxlength="500" minlength="50" required>
+            
+            <label for="pattern">Select Pattern:</label>
+            <select id="pattern" name="pattern">
+                <option value="NGG">NGG</option>
+                <option value="NGA">NGA</option>
+                <option value="NAG">NAG</option>
+				<option value="YYG">YYG</option>
+				<option value="TTN">TTN</option>
+            </select>
+            
+            <input type="submit" value="submit">
+
+
+        </form>
+    </div>
+   
+</body>
+</html>
