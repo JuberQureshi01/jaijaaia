@@ -64,6 +64,12 @@
         input[type="submit"]:hover {
             background-color: #45a049;
         }
+        textarea{
+            height: 60px;
+        }
+        #pattern{
+            width: 200px;
+        }
     </style>
 </head>
 <body>
@@ -73,8 +79,7 @@
 
       
             <label for="dna">Enter DNA sequence (ACGT only):</label>
-            <input type="text" id="dna" name="dna" pattern="[ACGT]*" maxlength="500" minlength="50" required>
-            
+            <textarea type="text" id="dna" name="dna" pattern="[ACGT]*" maxlength="500" minlength="50" required></textarea>
             <label for="pattern">Select Pattern:</label>
             <select id="pattern" name="pattern">
                 <option value="NGG">NGG</option>

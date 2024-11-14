@@ -1,92 +1,142 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DNA Sequencing</title>
     <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            min-height: 100vh;
+            font-family: 'Roboto', sans-serif;
+            background-color: #fafafa;
+            color: #333;
+            padding: 20px;
         }
 
         .form-container {
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-color: #ffffff;
+            width: 100%;
+            max-width: 700px;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
             text-align: center;
-            width: 600px; /* Ensure the container can hold at least 300 characters */
+            overflow-wrap: break-word;
         }
 
         h1 {
-            color: #ff0000; /* Title color */
+            font-size: 2.5rem;
+            color: #d9534f;
+            margin-bottom: 30px;
+        }
+
+        h3, h6 {
+            font-size: 1.5rem;
+            color: #5f6368;
+            margin-bottom: 15px;
+        }
+
+        p {
+            font-size: 1rem;
+            line-height: 1.5;
+            color: #333;
             margin-bottom: 20px;
         }
 
-        form {
-            display: flex;
-            flex-direction: column;
+        .dna-sequence {
+            font-size: 1.2rem;
+    font-weight: bold;
+    color: #3b9d9d;
+    word-wrap: break-word;
+    background-color: #e7e7e7;
+    padding: 3vw;
+    border-radius: 10px;
         }
 
-        label {
-            margin-bottom: 10px;
-            font-weight: bold;
+        .dna-pattern {
+            font-size: 1.1rem;
+            font-style: italic;
+            color: #555;
         }
 
-        input[type="text"],
-        select {
-            padding: 8px;
-            margin-bottom: 20px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            font-size: 14px;
-        }
-		input[type="text"]::placeholder { 
-			font-style: capital; 
-			color: #aaa;
-		}
-
-        input[type="submit"] {
-            padding: 10px;
-            background-color: #4CAF50; /* Submit button color */
+        .submit-btn {
+            padding: 12px 24px;
+            font-size: 1.1rem;
             color: white;
+            background-color: #28a745;
             border: none;
-            border-radius: 4px;
+            border-radius: 5px;
             cursor: pointer;
-            font-size: 16px;
+            transition: background-color 0.3s ease-in-out;
         }
 
-        input[type="submit"]:hover {
-            background-color: #45a049;
+        .submit-btn:hover {
+            background-color: #218838;
+        }
+
+        .table-container {
+            margin-top: 30px;
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid #ddd;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: #fff;
+        }
+
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #f4f4f4;
+        }
+
+        th {
+            background-color: #f1f1f1;
+            color: #666;
+        }
+
+        td {
+            color: #555;
+        }
+
+        tr:hover {
+            background-color: #f9f9f9;
         }
     </style>
 </head>
 <body>
-    <div class="container-fluid" style="width: 400px; overflow-wrap: break-word;">
+    <div class="form-container">
+        <h1>DNA Sequencing Results</h1>
 
-        <h3> Here is your DNA sequence :</h3>
-        <p style="font-size: 6px;"> {{sequence}} </p> 
+        <h3>Here is your DNA sequence:</h3>
+        <p class="dna-sequence">{{sequence}}</p> 
 
-        <h6> Here is your pattern</h6>
-        <p> {{pattern}} </p> 
+        <h6>Here is your pattern:</h6>
+        <p class="dna-pattern">{{pattern}}</p> 
 
-       
-        
+        <div class="table-container">
             <h6>DNA Sequencing Result</h6>
-            <p><strong>Sequence:</strong> </p>
+            <p><strong>Sequence:</strong></p>
 
             {{ tables|safe }}
+        </div>
 
-
-
-
-
-
+        <!-- Optional: Submit button or other form elements -->
+        <!-- <input type="submit" class="submit-btn" value="Submit"> -->
     </div>
 </body>
 </html>
-
